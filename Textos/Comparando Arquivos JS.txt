@@ -1,0 +1,199 @@
+//Form.js (ChatGPT) 17/12/2024
+
+import React, { useState } from "react";
+import { handleSubmit } from '../../utils/handleSubmit';
+// import emailjs from "@emailjs/browser";
+import "./Form.css";
+
+const Form = () => {
+const [formData, setFormData] = useState({
+    nome: "",
+    email: "",
+    telefone: "",
+    empreendimento: "",
+});
+
+const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+};
+
+const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Parâmetros para o EmailJS
+    const templateParams = {
+    nome: formData.nome,
+    email: formData.email,
+    telefone: formData.telefone,
+    empreendimento: formData.empreendimento,
+    };
+
+    emailjs
+    .send(
+        "SERVICE_ID",       // Substitua pelo seu Service ID
+        "TEMPLATE_ID",      // Substitua pelo seu Template ID
+        templateParams,
+        "PUBLIC_KEY"        // Substitua pela sua Public Key
+    )
+    .then(
+        (response) => {
+        console.log("E-mail enviado com sucesso!", response.status, response.text);
+        alert("Formulário enviado com sucesso!");
+          setFormData({ nome: "", email: "", telefone: "", empreendimento: "" }); // Limpa os campos
+        },
+        (err) => {
+        console.log("Erro ao enviar o e-mail:", err);
+        alert("Erro ao enviar o formulário. Tente novamente.");
+        }
+    );
+};
+
+return (
+    <div className="form-container">
+    <h2>Entre em Contato</h2>
+    <form onSubmit={handleSubmit} className="form">
+        <label>Nome</label>
+        <input
+        type="text"
+        name="nome"
+        value={formData.nome}
+        onChange={handleChange}
+        placeholder="Digite seu nome"
+        required
+        />
+
+        <label>E-mail</label>
+        <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        placeholder="Digite seu e-mail"
+        required
+        />
+
+        <label>Telefone</label>
+        <input
+        type="tel"
+        name="telefone"
+        value={formData.telefone}
+        onChange={handleChange}
+        placeholder="Digite seu telefone"
+        required
+        />
+
+        <label>Empreendimentos</label>
+        <select
+        name="empreendimento"
+        value={formData.empreendimento}
+        onChange={handleChange}
+        required
+        >
+        <option value="" disabled>Selecione um empreendimento</option>
+        <option value="Empreendimento 1">Empreendimento 1</option>
+        <option value="Empreendimento 2">Empreendimento 2</option>
+        <option value="Empreendimento 3">Empreendimento 3</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+    </form>
+    </div>
+);
+};
+
+export default Form;
+
+//Formulário.js (ChatGPT - 18/12/2024)
+
+import React, { useState } from 'react';
+import { handleSubmit } from '../../utils/handleSubmit';
+import './Formulario.css';
+
+const Formulario = () => {
+  const [formData, setFormData] = useState({
+    nome: '',
+    email: '',
+    telefone: '',
+    empreendimento: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  return (
+    <div className="form-container">
+      <h1>Cadastre-se para saber mais</h1>
+      <form onSubmit={handleSubmit}>
+        <label>Nome</label>
+        <input
+          type="text"
+          name="nome"
+          value={formData.nome}
+          onChange={handleChange}
+          required
+        />
+
+        <label>E-mail</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+        />
+
+        <label>Telefone</label>
+        <input
+          type="tel"
+          name="telefone"
+          value={formData.telefone}
+          onChange={handleChange}
+          required
+        />
+
+        <label>Empreendimento</label>
+        <select
+          name="empreendimento"
+          value={formData.empreendimento}
+          onChange={handleChange}
+          required
+        >
+          <option value="">Escolha uma opção</option>
+          <option value="Empreendimento 1">Empreendimento 1</option>
+          <option value="Empreendimento 2">Empreendimento 2</option>
+          <option value="Empreendimento 3">Empreendimento 3</option>
+        </select>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  );
+};
+
+export default Formulario;
+
+
+src/
+│
+├── components/
+│   └── Formulario/
+│       ├── Formulario.js       // Componente React com a função handleSubmit
+│       └── Formulario.css      // Estilização do formulário
+│
+├── pages/
+│   └── Faleconosco.js          // Página principal que chama o Formulario
+│
+└── App.js    
+
+
+src/
+│
+├── utils/
+│   └── handleSubmit.js          // Função separada
+│
+└── components/
+    └── Formulario/
+        └── Formulario.js     

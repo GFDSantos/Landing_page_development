@@ -1,0 +1,50 @@
+/* src/components/Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c2bfc7; /* Roxo */
+    padding: 10px 20px;
+    position: relative; /* Para posicionamento absoluto no conteúdo */
+}
+
+.logo {
+    height: 50px;
+}
+
+.center-nav {
+    position: absolute; /* Centraliza os links */
+    left: 40%; /* Alinha ao centro horizontalmente */
+    transform: translateX(-50%); /* Ajusta para o centro exato */
+    display: flex;
+    gap: 20px;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: rgba(12, 12, 14, 0.934);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #001006; /* Cor padrão do WhatsApp */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.whatsapp img {
+    width: 24px; /* Tamanho do ícone do WhatsApp */
+    height: 24px;
+}

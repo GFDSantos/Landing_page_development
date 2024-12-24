@@ -1,0 +1,100 @@
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.image-item {
+    width: 30%;
+    height:auto; /* Ajuste a altura conforme necessário */ 
+    padding: 8px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px; 
+}
+
+.image-item img{
+  object-fit:fill;  
+  height: 250px;
+  width: 30vw;
+}
+
+.body{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.saibamais-body {
+  text-align: center; /* Centraliza o texto horizontalmente */
+  margin: 0 auto; /* Garante que o container esteja centralizado */
+  max-width: 800px; /* Define uma largura máxima para evitar textos muito largos */
+  padding: 20px; /* Adiciona espaçamento interno ao container */
+  line-height: 1.6; /* Aumenta o espaçamento entre as linhas */
+  font-family: Arial, sans-serif; /* Define uma fonte limpa e legível */
+  color: #333; /* Cor do texto */
+}
+
+.saibamais-body h1 {
+  font-size: 2em; /* Tamanho do título */
+  margin-bottom: 20px; /* Espaçamento inferior do título */
+  color: #007BFF; /* Cor destacada para o título */
+}
+
+.saibamais-body p {
+  font-size: 1.1em; /* Tamanho do texto dos parágrafos */
+  margin-bottom: 15px; /* Espaçamento inferior entre os parágrafos */
+}
+  /* Media queries para responsividade */
+
+.faleconosco-body {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faleconosco-body > p:first-child {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.faleconosco-body h1 {
+    color: #333;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.faleconosco-body p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.faleconosco-body p:last-child {
+    margin-bottom: 0;
+}
+
+  @media (max-width: 768px) {
+    .image-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-grid {
+      grid-template-columns: 1fr; /* 1 coluna para telas muito pequenas */
+    }
+}

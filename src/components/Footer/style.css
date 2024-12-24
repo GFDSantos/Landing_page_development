@@ -1,0 +1,31 @@
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ajuste conforme necessário */
+}
+
+footer {
+  background-color: #f0f0f0;
+  padding: 10px; /* Reduza o padding para diminuir a altura */
+  text-align: center;
+  font-size: 14px; /* Reduza o tamanho da fonte */
+  margin-top: auto; /* Empurra o footer para o final */
+}
+
+  /* Para telas menores (e.g., smartphones) */
+@media (max-width: 768px) {
+    footer nav ul {
+    flex-direction: column;
+    }
+    footer nav ul li {
+    margin: 10px 0;
+    }
+}
+
+

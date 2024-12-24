@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "orla-maua", "alt": "Orla Mauá","text":"Orla Maua" },
+    { "id": 2, "name": "baia-guanabara-residences", "alt": "Baía Guanabara Residences", "text": "Baía Guanabana Residences" },
+    { "id": 3, "name": "orla-recreio", "alt": "Orla Recreio Dream","text": "Orla Recreio" },
+    { "id": 4, "name": "metropolitan-dream", "alt": "METROPOLITAN Dream", "text": "METROPOLITAN Dream" },
+    { "id": 5, "name": "the-pier", "alt": "The PIER", "text":"The PIER" },
+    { "id": 4, "name": "rio-branco", "alt": "Rio Branco 220","text":"Rio Branco 220" }
+]
